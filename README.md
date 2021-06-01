@@ -21,3 +21,5 @@ An example application to show recipes from contentful api.
 
 ![Recipes page](app/assets/images/MarleySpoon.png)
 ![Recipe Show](app/assets/images/Recipe%20Page.png)
+
+* For test cases run `rails test` 
