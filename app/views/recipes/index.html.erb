@@ -1,0 +1,22 @@
+<% if @recipes.present? %>
+  <h1>All Recipes</h1>
+  <% @recipes.each do |recipe| %>
+    <div class="row col-md-offset-2">
+      <div class="col-md-2">
+        <img src="<%= recipe.photo.url(w: 140) %>" alt="Recipe Image">
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <h4 class="pull-left"><%= recipe.title %></h4>
+        </div>
+        <div class="row">
+          <%= link_to 'Details', recipe_path(recipe.id), class: 'btn btn-primary pull-left' %>
+        </div>
+      </div>
+      <br>
+    </div>
+    <br/>
+  <% end %>
+<% else %>
+  <h1> No data found for recipes</h1>
+<% end %>

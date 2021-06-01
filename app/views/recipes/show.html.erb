@@ -1,0 +1,24 @@
+<% if @recipe %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="project-info-box mt-0">
+          <h5><%= @recipe.title %></h5>
+          <p class="mb-0"><%= @recipe.description %></p>
+        </div>
+
+        <div class="project-info-box">
+          <p><b>Tags:</b>  <%= @recipe.try(:tags).present? ? @recipe.tags.map{|a| a.name.titleize}.try(:join, ',') : '' %></p>
+          <p><b>Chef Name:</b> <%= @recipe.chef.try(:name) || '' %></p>
+        </div>
+
+      </div>
+
+      <div class="col-md-7">
+        <img src="<%= @recipe.photo.url(w: 240) %>" alt="recipe-image" class="rounded">
+      </div>
+    </div>
+  </div>
+  <% else %>
+  <h1>Recipe Not found</h1>
+<% end %>
